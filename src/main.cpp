@@ -24,6 +24,7 @@ int main (int argc, const char * argv[]) {
     buffer << file.rdbuf();
     std::string pythonCode = buffer.str();
 
-    std::filesystem::current_path();
+    std::filesystem::current_path(setCwd);
+
     auto holder = threader::ThreadHolder(pythonCode);
 }
